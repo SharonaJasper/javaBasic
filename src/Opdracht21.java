@@ -10,7 +10,7 @@ public class Opdracht21 {
 
     static int getSum(int n) {
         int sum = 0;
-        /* Single line that calculates sum */
+        //calculates sum
         while (n > 0) {
             sum += n % 10;
             n /= 10;
