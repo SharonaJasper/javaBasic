@@ -3,7 +3,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Scanner;
 
-public class opdracht8 {
+public class Opdracht8 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
