@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class opdracht6 {
+public class Opdracht6 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
@@ -18,8 +18,8 @@ public class opdracht6 {
         }
 
         System.out.println("Number of scores >= 7: " + tests.size());
-        for (int k = 0; k < tests.size(); k++) {
-            System.out.println(tests.get(k));
+        for (Integer test : tests) {
+            System.out.println(test);
         }
 
 
