@@ -7,11 +7,11 @@ public class TicTacToe extends JFrame implements ActionListener {
     JLabel display = new JLabel("Let's play TicTacToe!");
     JLabel winner = new JLabel("");
     JButton[] button = new JButton[9];
-    int value = 0;
-    String line = null;
+    int value;
     int i;
+    String line = null;
     String board = "";
-    boolean win = false;
+
 
     public TicTacToe() {
         //create panel with gridlayout on content pane
@@ -26,7 +26,7 @@ public class TicTacToe extends JFrame implements ActionListener {
             button[i].addActionListener(this);
         }
 
-        //label with welcome text
+        //labels with welcome text and winner
         getContentPane().add(display, BorderLayout.NORTH);
         getContentPane().add(winner, BorderLayout.SOUTH);
         display.setPreferredSize(new Dimension(400, 30));
@@ -43,14 +43,7 @@ public class TicTacToe extends JFrame implements ActionListener {
         tc.setDefaultCloseOperation(EXIT_ON_CLOSE);
     }
 
-//    public void initializeBoard() {
-//        // loops through rows
-//        for (int i = 0; i < 3; i++) {
-//            //loops trough columns
-//            for (int j = 0; j < 3; j++) {
-//
-//            }
-//        }
+//    public void () {
 //    }
 
 
@@ -111,30 +104,32 @@ public class TicTacToe extends JFrame implements ActionListener {
                             break;
                     }
 
-                    }
-                // string of entire board
-                board = button[0].getText() + button[1].getText() + button[2].getText() +
-                        button[3].getText() + button[4].getText() + button[5].getText() + button[6].getText() +
-                        button[7].getText() + button[8].getText();
+                    // string of entire board
+                    board = button[0].getText() + button[1].getText() + button[2].getText() +
+                            button[3].getText() + button[4].getText() + button[5].getText() + button[6].getText() +
+                            button[7].getText() + button[8].getText();
 
-                //System.out.println("board is " + board);
+                    //System.out.println("board is " + board);
 
-                if (line.equals("XXX")) {
-                    winner.setText("X wins!");
-                    for (i = 0; i < 9; i++) {
-                        button[i].setText("");
+                    if (line.equals("XXX")) {
+                        winner.setText("X wins!");
+                        for (i = 0; i < 9; i++) {
+                            button[i].setText("");
+                        }
+                    } else if (line.equals("OOO")) {
+                        winner.setText("O wins!");
+                        for (i = 0; i < 9; i++) {
+                            button[i].setText("");
+                        }
+                    } else if (board.length() == 9) {
+                        winner.setText("It's a draw! Thanks for playing.");
+                        for (i = 0; i < 9; i++) {
+                            button[i].setText("");
+                        }
                     }
-                } else if (line.equals("OOO")) {
-                    winner.setText("O wins!");
-                    for (i = 0; i < 9; i++) {
-                        button[i].setText("");
+
                     }
-                } else if (board.length() == 9) {
-                    winner.setText("It's a draw! Thanks for playing.");
-                    for (i = 0; i < 9; i++) {
-                        button[i].setText("");
-                    }
-                }
+
 
 
             }
