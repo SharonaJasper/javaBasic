@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class opdracht3 {
+public class Opdracht3 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter first side of the triangle: ");
