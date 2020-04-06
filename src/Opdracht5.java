@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class opdracht5 {
+public class Opdracht5 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("value of x: ");
