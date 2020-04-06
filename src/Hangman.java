@@ -17,7 +17,11 @@ public class Hangman extends JFrame implements ActionListener {
             "notebook", "drinks", "investigation", "java",
             "pollution", "trespasser", "volcano", "multiply",};
 
-    public Hangman() {
+    public void newGame() {
+        display.setText("And we start again!");
+        display2.setText("");
+        goodGuesses = 0;
+        wrongGuesses = 0;
         // generate random number for index word
         int max = words.length;
         int min = 0;
@@ -28,6 +32,8 @@ public class Hangman extends JFrame implements ActionListener {
         currentWord = words[number];
         System.out.println(currentWord);
 
+    }
+    public Hangman() {
         //add displays
         getContentPane().add(display, BorderLayout.NORTH);
         getContentPane().add(display2, BorderLayout.CENTER);
@@ -38,6 +44,7 @@ public class Hangman extends JFrame implements ActionListener {
         getContentPane().add(inputTextF, BorderLayout.SOUTH);
         getContentPane().add(button, BorderLayout.EAST);
         button.addActionListener(this);
+        newGame();
 
     }
 
@@ -75,8 +82,10 @@ public class Hangman extends JFrame implements ActionListener {
         }
         if (goodGuesses == currentWord.length()){
             display.setText("You guessed the word!");
+            newGame();
         } else if (wrongGuesses == 10) {
             display.setText("You are out of turns");
+            newGame();
         }
 
 
