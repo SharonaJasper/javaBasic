@@ -74,7 +74,7 @@ public class Hangman extends JFrame implements ActionListener {
 
             } else {
                 display.setText(userInput + " is at index " + currentWord.indexOf(userInput));
-                //completeWord.();
+                //completeWord.(i);
                 inputTextF.setText("");
                 goodGuesses++;
                 display2.setText("Number of good guesses: " + goodGuesses + "  " + "Number of wrong guesses: " + wrongGuesses);
