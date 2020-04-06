@@ -9,8 +9,8 @@ public class TicTacToe extends JFrame implements ActionListener {
     JButton[] button = new JButton[9];
     int value;
     int i;
-    String line = null;
-    String board = "";
+    String line;
+    String board;
 
 
     public TicTacToe() {
@@ -42,9 +42,6 @@ public class TicTacToe extends JFrame implements ActionListener {
         tc.setVisible(true);
         tc.setDefaultCloseOperation(EXIT_ON_CLOSE);
     }
-
-//    public void () {
-//    }
 
 
     @Override
