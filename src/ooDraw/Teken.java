@@ -35,7 +35,11 @@ public class Teken extends JFrame implements MouseListener {
     @Override
     public void mousePressed(MouseEvent e) {
         System.out.println("pressed");
-        figuur = new Ovaal();
+        if (e.getButton() == MouseEvent.BUTTON3) {
+            figuur = new Lijn();
+        } else {
+            figuur = new Ovaal();
+        }
         figuur.x1 = e.getX();
         figuur.y1 = e.getY();
     }
