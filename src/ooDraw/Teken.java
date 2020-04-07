@@ -49,6 +49,7 @@ public class Teken extends JFrame implements MouseListener {
         System.out.println("released");
         figuur.x2 = e.getX();
         figuur.y2 = e.getY();
+//        figuur = new Driehoek();
         repaint();
         figuren.add(figuur);
     }
