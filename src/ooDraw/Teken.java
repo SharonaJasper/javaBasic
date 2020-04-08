@@ -8,9 +8,10 @@ import java.util.List;
 
 public class Teken extends JFrame implements MouseListener, ActionListener {
 
-    Figuur figuur = new Lijn();
+    Figuur figuur;
     List<Figuur> figuren = new ArrayList<>();
     JButton button = new JButton("Save to file");
+    int apf;
 
 
     public static void main(String[] args) {
@@ -84,11 +85,9 @@ public class Teken extends JFrame implements MouseListener, ActionListener {
     @Override
     public void mousePressed(MouseEvent e) {
         System.out.println("pressed");
-//        if (e.getButton() == MouseEvent.BUTTON3) {
-//            figuur = new Lijn();
-//        } else {
-//            figuur = new Ovaal();
-//        }
+        if (apf == 0) {
+            figuur = new Lijn();
+        }
         figuur.x1 = e.getX();
         figuur.y1 = e.getY();
     }
@@ -105,6 +104,7 @@ public class Teken extends JFrame implements MouseListener, ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
+        apf = 1;
         String command = e.getActionCommand();
         System.out.println(command);
         System.out.println("actionperf");
