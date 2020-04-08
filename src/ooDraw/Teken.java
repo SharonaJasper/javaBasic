@@ -11,7 +11,8 @@ public class Teken extends JFrame implements MouseListener, ActionListener {
     Figuur figuur;
     List<Figuur> figuren = new ArrayList<>();
     JButton button = new JButton("Save to file");
-    int apf;
+    private int apf;
+    private String type;
 
 
     public static void main(String[] args) {
@@ -63,7 +64,6 @@ public class Teken extends JFrame implements MouseListener, ActionListener {
                 "This menu does nothing");
         menuBar.add(menu);
 
-
         this.setJMenuBar(menuBar);
 
 
@@ -87,6 +87,16 @@ public class Teken extends JFrame implements MouseListener, ActionListener {
         System.out.println("pressed");
         if (apf == 0) {
             figuur = new Lijn();
+        } else {
+            if (type.equals("Rechthoek")) {
+                figuur = new Rechthoek();
+            } if (type.equals("Ovaal")) {
+                figuur = new Ovaal();
+            } if (type.equals("Lijn")) {
+                figuur = new Lijn();
+            } if (type.equals("Driehoek")) {
+                figuur = new Driehoek();
+            }
         }
         figuur.x1 = e.getX();
         figuur.y1 = e.getY();
@@ -109,17 +119,21 @@ public class Teken extends JFrame implements MouseListener, ActionListener {
         System.out.println(command);
         System.out.println("actionperf");
         if (command.equals("Rechthoek")) {
+            type = "Rechthoek";
             figuur = new Rechthoek();
             System.out.println(figuur);
         } if (command.equals("Ovaal")) {
+            type = "Ovaal";
             figuur = new Ovaal();
             System.out.println(figuur);
         } if (command.equals("Lijn")) {
+            type = "Lijn";
             figuur = new Lijn();
             System.out.println(figuur);
         } if (command.equals("Driehoek")) {
             figuur = new Driehoek();
             System.out.println(figuur);
+            type = "Driehoek";
         } if (command.equals("Save to file")) {
             System.out.println("to file");
         }
