@@ -112,11 +112,16 @@ public class Teken extends JFrame implements MouseListener, ActionListener {
             figuur = new Rechthoek();
         } if (command.equals("Ovaal")) {
             figuur = new Ovaal();
+            System.out.println(figuur);
         } if (command.equals("Lijn")) {
             figuur = new Lijn();
-        } else {
+        } if (command.equals("Lijn")) {
             figuur = new Driehoek();
+        } if (command.equals("Save to file")) {
+            System.out.println("to file");
         }
+
+        System.out.println(figuur);
 
 
     }
