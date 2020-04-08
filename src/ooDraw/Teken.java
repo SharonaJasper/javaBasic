@@ -40,23 +40,18 @@ public class Teken extends JFrame implements MouseListener, ActionListener {
         //a group of JMenuItems
         JMenuItem rechthoek = new JMenuItem("Rechthoek");
         menu.add(rechthoek);
-        //rechthoek.setActionCommand("rechthoek");
         rechthoek.addActionListener(this);
 
         JMenuItem ovaal = new JMenuItem("Ovaal");
         menu.add(ovaal);
-        //ovaal.setActionCommand("ovaal");
         ovaal.addActionListener(this);
 
         JMenuItem lijn = new JMenuItem("Lijn");
         menu.add(lijn);
-        //figuur = new Lijn();
-        //lijn.setActionCommand("lijn");
         lijn.addActionListener(this);
 
         JMenuItem driehoek = new JMenuItem("Driehoek");
         menu.add(driehoek);
-        //driehoek.setActionCommand("driehoek");
         driehoek.addActionListener(this);
 
 
@@ -111,6 +106,7 @@ public class Teken extends JFrame implements MouseListener, ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         String command = e.getActionCommand();
+        System.out.println(command);
         System.out.println("actionperf");
         if (command.equals("Rechthoek")) {
             figuur = new Rechthoek();
